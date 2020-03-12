@@ -7,7 +7,7 @@ public class Target : MonoBehaviour
     private Rigidbody targetRb;
     private float minSpeed = 12;
     private float maxTorque = 10;
-    private float ySpawnPos = -6;
+    private float ySpawnPos = -2;
     private float maxSpeed = 16;
     private float xRange = 4; 
 
@@ -25,6 +25,16 @@ public class Target : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject); 
     }
 
     Vector3 RandomForce()
